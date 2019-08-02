@@ -7,7 +7,7 @@ function showFortune(evt) {
 
     // TODO: get the fortune and show it in the #fortune-text div
   $.get('/fortune', changeFortuneText);
-  
+
 }
 
 function changeFortuneText(response){
@@ -18,6 +18,11 @@ $('#get-fortune-button').on('click', showFortune);
 
 // PART 2: SHOW WEATHER
 
+function handleForecast(response) {
+  
+  $('#weather-info').text(response['forecast']);
+}
+
 function showWeather(evt) {
     evt.preventDefault();
 
@@ -26,11 +31,10 @@ function showWeather(evt) {
 
 
     // TODO: request weather with that URL and show the forecast in #weather-info
+    $.get(url, formData, handleForecast);
 }
 
 $("#weather-form").on('submit', showWeather);
-
-
 
 
 // PART 3: ORDER MELONS

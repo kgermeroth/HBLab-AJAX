@@ -50,7 +50,7 @@ def weather():
     weather_info = WEATHER.get(zipcode, DEFAULT_WEATHER)
     return jsonify(weather_info)
 
-
+fortune
 @app.route('/order-melons.json', methods=['POST'])
 def order_melons():
     """Order melons and return a dictionary of result-code and result-msg."""
