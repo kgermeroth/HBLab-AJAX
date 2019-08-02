@@ -6,13 +6,15 @@
 function showFortune(evt) {
 
     // TODO: get the fortune and show it in the #fortune-text div
+  $.get('/fortune', changeFortuneText);
+  
+}
+
+function changeFortuneText(response){
+  $('#fortune-text').text(response);
 }
 
 $('#get-fortune-button').on('click', showFortune);
-
-
-
-
 
 // PART 2: SHOW WEATHER
 
